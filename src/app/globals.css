@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Playfair Display", Georgia, serif;
+    --font-body: "DM Sans", system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: theme("colors.gold.400");
+    color: theme("colors.primary.950");
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.primary.900");
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Portable Text styles */
+  .prose-school {
+    @apply prose prose-neutral max-w-none;
+    @apply prose-headings:font-display prose-headings:text-primary-900;
+    @apply prose-a:text-primary-700 prose-a:no-underline hover:prose-a:underline;
+    @apply prose-strong:text-primary-900;
+    @apply prose-blockquote:border-l-gold-400 prose-blockquote:text-neutral-600;
+  }
+
+  /* Section wrapper */
+  .section-wrapper {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Container variants */
+  .container-tight {
+    @apply mx-auto max-w-4xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Table styles */
+  .table-school {
+    @apply w-full border-collapse text-sm;
+  }
+
+  .table-school th {
+    @apply bg-primary-900 px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-white;
+  }
+
+  .table-school td {
+    @apply border-b border-neutral-200 px-4 py-3 text-neutral-700;
+  }
+
+  .table-school tr:hover td {
+    @apply bg-neutral-50;
+  }
+
+  .table-school tr:last-child td {
+    @apply border-b-0;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(135deg, #011a48 0%, #1b305e 50%, #324574 100%);
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #ffc629 0%, #ffd95e 100%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+}
