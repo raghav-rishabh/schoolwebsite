@@ -427,7 +427,7 @@ function FacilityCard({ facility, index }: FacilityCardProps): JSX.Element {
           {facility.title}
         </h3>
         <p className="text-slate-500 text-sm leading-relaxed font-light mb-6">{facility.desc}</p>
-        <a
+        <Link
         href={facility.href}
           className="text-[#0f2a4a] text-sm font-semibold tracking-wide flex items-center gap-2 group w-fit"
         >
@@ -436,7 +436,7 @@ function FacilityCard({ facility, index }: FacilityCardProps): JSX.Element {
             size={14}
             className="transition-transform duration-200 group-hover:translate-x-1"
           />
-        </a>
+        </Link>
       </div>
     </motion.div>
   );
